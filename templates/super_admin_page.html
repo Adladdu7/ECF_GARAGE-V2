@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+    <title>Garage V. Parrot</title>
+</head>
+<body>
+    <div class="body">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Garage V. Parrot Logo">
+                <img>
+                </div>                <nav>
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/vehicles">Véhicules en vente</a></li>
+                        <li><a href="/contact">Nous contacter</a></li>
+                        {% if user_is_authenticated %}
+                            <li><a href="/profile">Profile</a></li>
+                            <li><a href="/logout">Se déconnecter</a></li>
+                        {% else %}
+                            <li><a href="/login">Se connecter</a></li>
+                        {% endif %}
+                        <li><a href="/services">Nos services</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+    <h1>Bienvenue sur la page Super Admin</h1>
+    {% if role == 'superadmin' %}
+
+
+    <p>Ce contenu est uniquement accessible aux super administrateurs.</p>
+    <div class="section">
+    <h3>Créer un compte admin</h3>
+    <div class="section-content">
+    <form method="post" class="user-form" id="adminForm">
+        <div class="form-group">
+            <label for="email">Adresse e-mail :</label>
+            <input type="email" name="email" id="email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Mot de passe :</label>
+            <input type="password" name="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Créer le compte admin">
+        </div>
+        <div id="registration-messages">
+            <div id="success-message" style="color: green; margin-top: 10px;"></div>
+            <div id="error-message" style="color: red; margin-top: 10px;"></div>
+        </div>
+    </div>
+
+    </form>
+ </div>
+</div>
+{% endif %}
+
+{% if message %}
+<div class="message">{{ message }}</div>
+{% endif %}
+            
+            
+    </main>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/static/js/registeruser.js"></script>
+<script src="/static/js/displayprofile.js"></script>
+<script src="/static/js/openinghours.js"></script>
+<script src="/static/js/footerarrow.js"></script>
+
+</body>
+</html>

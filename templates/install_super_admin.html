@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Installation du Super Admin</title>
+</head>
+<body>
+    <h1>Installation du Super Admin</h1>
+    {% if user_is_authenticated %}
+    <p>Vous êtes déjà connecté en tant qu'utilisateur. Vous ne pouvez pas accéder à cette page.</p>
+    <a href="/">Revenir à la page d'accueil</a>
+    {% else %}
+    <p>Avant de commencer à utiliser l'application, veuillez créer un compte Super Admin.</p>
+    <form method="POST" action="/install_super_admin">
+        <label for="email">Adresse e-mail :</label>
+        <input type="email" id="email" name="email" required>
+        <br>
+        <label for="password">Mot de passe :</label>
+        <input type="password" id="password" name="password" required>
+        <br>
+        <button type="submit">Créer le compte Super Admin</button>
+    </form>
+    {% endif %}
+</body>
+</html>

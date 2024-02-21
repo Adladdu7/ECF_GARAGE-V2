@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/footer.css') }}">
+       <title>Garage V. Parrot</title>
+</head>
+<body>
+    <div class="body">
+        <header>
+            <div class="header-container">
+                <div class="logo">
+                    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Garage V. Parrot Logo">
+                <img>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="/">Accueil</a></li>
+                        <li><a href="/vehicles">Véhicules en vente</a></li>
+                        <li><a href="/contact">Nous contacter</a></li>
+                        {% if user_is_authenticated %}
+                            <li><a href="/profile">Profile</a></li>
+
+                            {% if role == 'superadmin' %}
+
+                            <li><a href="/super_admin_page">SuperAdmin</a></li>
+
+                            {% endif %}
+
+                            <li><a href="/logout">Se déconnecter</a></li>
+                        {% else %}
+                            <li><a href="/login">Se connecter</a></li>
+                        {% endif %}
+                        <li><a href="/services">Nos services</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <h1>Bienvenue sur le site du Garage V. Parrot !</h1>
+
+            <div id="randomVehiclesInfo" class="preview-frame">
+                <h2>Véhicules aléatoires</h2>
+                <div id="vehiclesList"></div>
+              </div>
+              
+        </main>
+        <div id="infoList"></div>
+        <div class="testimonial-container">
+            {% for testimonial in testimonials %}
+                <div class="testimonial-slide">
+                    <div class="testimonial-grid">
+                        <div class="testimonial">
+                            <h3>{{ testimonial[1] }}</h3>
+                            <p>{{ testimonial[2] }}</p>
+                            <div class="star-rating">
+                                <p>{{ testimonial[3] }}<span class="star-yellow"> &#9733;</span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        <button id="prev-slide" class="carrousel-button">Précedent</button>
+        <button id="next-slide" class="carrousel-button">Suivant</button>
+        
+        
+        
+        <form id="testimonialForm">
+            <div class="form-group">
+                <label for="name">Nom :</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="comment">Commentaire :</label>
+                <textarea id="comment" name="comment" rows="6" required></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="rating">Note :</label>
+                <div class="rating">
+                    <input type="radio" id="rating5" class="rating-input" name="rating" value="5">
+                    <label for="rating5" class="rating-star"></label>
+                    <input type="radio" id="rating4" class="rating-input" name="rating" value="4">
+                    <label for="rating4" class="rating-star"></label>
+                    <input type="radio" id="rating3" class="rating-input" name="rating" value="3">
+                    <label for="rating3" class="rating-star"></label>
+                    <input type="radio" id="rating2" class="rating-input" name="rating" value="2">
+                    <label for="rating2" class="rating-star"></label>
+                    <input type="radio" id="rating1" class="rating-input" name="rating" value="1">
+                    <label for="rating1" class="rating-star"></label>
+                </div>
+                <div id="rating-value" style="position: relative; right: -30px; top: 10%; font-weight: 500; font-size: 80px;margin-right: 25px;"></div> <!-- This is where the rating value will be displayed -->
+            </div>
+            
+            <div class="form-group">
+                <input type="submit" value="Ajouter un témoignage">
+            </div>
+        </form>
+        <div id="footer-toggle" class="arrow">
+            <span class="arrow-icon"></span>
+        </div>
+        <footer>
+            <div class="footer-container">
+                <div class="opening-hours">
+                    <h3>Horaires d'ouverture :</h3>
+                    <div class="days">
+                        <div class="column">
+                         <p>Lundi : {{ opening_hours[1] }}</p>
+                         <p>Vendredi : {{ opening_hours[5] }}</p>
+    
+                        </div>
+                        <div class="column">
+                            <p>Mardi : {{ opening_hours[2] }}</p>
+                            <p>Samedi : {{ opening_hours[6] }}</p>
+    
+    
+                        </div>
+                        <div class="column">
+                            <p>Mercredi : {{ opening_hours[3] }}</p>
+                            <p>Dimanche : {{ opening_hours[7] }}</p>
+                        </div>
+                        <div class="column">
+    
+                             <p>Jeudi : {{ opening_hours[4] }}</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <h3>Contact :</h3>
+                    <a href="/contact">Nous contacter</a>
+                    <a href="mailto:contact@garageparrot.com">contact@garageparrot.com</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/static/js/index.js"></script>
+    <script src="/static/js/testimonial.js"></script>
+    <script src="/static/js/carrousel.js"></script>
+    <script src="/static/js/openinghours.js"></script>
+    <script src="/static/js/footerarrow.js"></script>
+</body>
+</html>

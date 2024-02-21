@@ -1,0 +1,147 @@
+/* Styles pour le pied de page */
+footer {
+    background-image: linear-gradient(to right, #448AFF, #18FFFF);
+    color: black;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Utilisez une disposition en colonne */
+    justify-content: space-evenly; /* Centrer le contenu verticalement */
+    align-items: center;
+    max-height: 200px; /* Ajuster la hauteur maximale */
+    z-index: 1000; /* Assurez-vous que le pied de page est au-dessus du reste du contenu */
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Ajouter une ombre au-dessus du pied de page */
+    font-size: 14px; /* Ajuster la taille de la police */
+}
+
+/* Conteneur pour le pied de page */
+.footer-container {
+    display: flex;
+    flex-direction: row;
+}
+
+/* Styles pour les horaires d'ouverture et les informations de contact */
+.opening-hours,
+.contact-info {
+    padding: 5px 10px; /* Ajuster la marge intérieure */
+    text-align: center; /* Centrer le texte */
+}
+
+.opening-hours h3,
+.contact-info h3 {
+    margin-bottom: 5px;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Styles pour les informations de contact */
+footer .contact-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrer le texte */
+}
+
+footer a {
+    color: black;
+    text-decoration: underline;
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+/* Styles pour les messages d'erreur */
+#error-message {
+    text-align: center;
+    font-size: 14px; /* Ajuster la taille de la police */
+}
+
+/* Styles pour masquer le pied de page */
+footer.hidden {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+/* Styles pour le bouton de bascule du pied de page */
+#footer-toggle {
+    text-align: center;
+    margin-top: 10px; /* Ajuster la marge supérieure */
+    cursor: pointer;
+}
+
+/* Styles pour la flèche de bascule */
+.arrow {
+    position: fixed;
+    bottom: 10px; /* Ajuster la position verticale */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px; /* Ajuster la largeur */
+    height: 25px; /* Ajuster la hauteur */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+/* Styles pour l'icône de la flèche */
+.arrow .arrow-icon {
+    width: 0;
+    border: 1px solid #333;
+    background-color: #333;
+    height: 0;
+    border-left: 8px solid transparent; /* Ajuster la taille de la flèche */
+    border-right: 8px solid transparent; /* Ajuster la taille de la flèche */
+    border-top: 8px solid white; /* Flèche pointant vers le haut */
+    transition: transform 0.3s ease; /* Ajouter une transition */
+}
+
+/* Styles pour la flèche lorsque celle-ci est orientée vers le haut */
+.arrow.arrow-up {
+    transform: translateX(-50%) rotate(180deg);
+}
+
+/* Styles personnalisés pour la flèche lorsqu'elle pointe vers le haut */
+.arrow.arrow-up .arrow-icon {
+    border-top-color: 8px solid white; /* Ajuster pour correspondre à la couleur de fond */
+    transition: transform 0.3s ease, border-top-color 0.3s ease; /* Ajouter une transition de couleur de bordure */
+}
+
+/* Styles pour masquer le pied de page */
+footer.hidden {
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+/* Styles pour les horaires d'ouverture */
+.opening-hours {
+    background-image: rgba(68, 138, 255, 0.5);
+    color: black;
+    padding: 5px 2px; /* Ajuster la marge intérieure */
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between; /* Ajuster la disposition pour remplir l'espace en largeur */
+    align-items: center;
+    max-height: 100px; /* Ajuster la hauteur maximale */
+    z-index: 999; /* Assurez-vous que les horaires d'ouverture sont au-dessus du pied de page */
+}
+
+/* Styles pour les jours de la semaine */
+.days {
+    display: flex; /* Utiliser un affichage flex pour les colonnes */
+}
+
+/* Styles pour les colonnes de jours de la semaine */
+.column {
+    text-align: center;
+    flex: 1; /* Ajuster la flexibilité pour répartir l'espace également entre les colonnes */
+    padding: 0 5px; /* Ajuster l'espacement entre les jours */
+}
+
+/* Le reste du CSS reste inchangé */

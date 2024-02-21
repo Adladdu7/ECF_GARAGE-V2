@@ -1,0 +1,479 @@
+/* Styles du contenu principal */
+body, h1, h2, p, ul, li {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  padding-top: 30px; /* Adjust this value based on your header height */
+}
+
+/* Styles du contenu principal */
+main {
+  padding: 2em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: 30px; /* Adjust this value based on your header height */
+}
+
+main h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-top: 2em;
+  color: #333;
+  text-align: center;
+}
+
+main p {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5em;
+  color: #333;
+}
+
+
+/* Styles pour les images de véhicules */
+.vehicle img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Styles pour la section d'informations aléatoires sur les véhicules */
+#randomVehiclesInfo {
+  background-color: #f4f4f4;
+  padding: 2em;
+  border-radius: 10px;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  margin-top: 2em;
+}
+
+/* Styles pour la liste de véhicules */
+#vehiclesList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 0;
+  margin-top: 2em;
+}
+
+/* Styles pour un élément de véhicule */
+.vehicle {
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.vehicle img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Styles pour les informations du véhicule */
+.vehicle-info {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 1em;
+  font-weight: bold;
+  text-align: left;
+  display: none;
+}
+
+.vehicle-info h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5em;
+}
+
+.vehicle-info p {
+  font-size: 1rem;
+  margin: 0.5em 0;
+}
+
+/* Styles pour la liste d'informations */
+#infoList {
+  display: none;
+  margin-top: 2em;
+}
+
+/* Styles pour les éléments d'information */
+.info {
+  background-color: #f4f4f4;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+
+.info h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5em;
+  font-weight: bold;
+}
+
+.info p {
+  font-size: 1.25rem;
+  margin: 0.5em 0;
+}
+
+/* Styles pour le bouton "Information" */
+.info-button {
+  background: #3D94F6;
+  background-image: -webkit-linear-gradient(top, #3D94F6, #1E62D0);
+  -webkit-border-radius: 65%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  color: #FFFFFF;
+  font-family: Trebuchet MS;
+  font-size: 1rem;
+  padding: 1em;
+  position: absolute;
+  left: 1em;
+  top: 0.75em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1;
+  border: none;
+}
+
+.info-button:hover {
+  background: #1E62D0;
+  background-image: -webkit-linear-gradient(top, #1E62D0, #3D94F6);
+
+}
+
+/* Styles pour les résultats de recherche */
+#searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+  margin-top: 2em;
+}
+
+.searchResults {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding: 1em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0)
+}
+searchResults img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Styles pour la grille de témoignages */
+.non-allowed-testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2em;
+}
+
+/* Styles pour les éléments de témoignage individuels */
+.testimonial-grid {
+  border: 1px solid #ccc;
+  padding: 1.5em;
+  background-color: #fff;
+  transition: transform 0.2s;
+}
+
+/* Effet de survol */
+.testimonial-grid:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Styles généraux pour les sections */
+.section {
+  margin-bottom: 2em;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+/* Styles pour les titres h3 dans les sections */
+.section h3 {
+  padding: 1em;
+  cursor: pointer;
+  background-color: #f0f0f0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+/* Styles pour le contenu initialement masqué */
+.section-content {
+  padding: 1em;
+  background-color: white;
+  display: none;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+/* Styles pour le conteneur de témoignages */
+.testimonial-container {
+  display: flex;
+  overflow-x: auto;
+  border-radius: 20px;
+  padding: 1em;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+/* Carte de témoignage */
+.testimonial {
+  border: 1px solid #ccc;
+  padding: 2em;
+  margin-right: 2em;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  background-color: #fff;
+  border-radius: 15px;
+}
+
+.testimonial-slide {
+  width: 100%;
+  display: none;
+}
+
+/* Styles pour l'affichage de l'évaluation par étoiles */
+.star-rating {
+  font-size: 2rem;
+}
+
+.star-rating {
+  font-size: 2rem; 
+}
+.star-yellow {
+  color: orangered;
+}
+
+/* Styles individuels pour les étoiles */
+.star {
+  display: inline-block;
+  margin: 0 0.2em;
+  font-size: 2rem;
+}
+
+/* Styles pour la liste de services */
+.services-list {
+  list-style: none;
+  padding: 0;
+}
+
+.service-item {
+  display: flex;
+  border: 1px solid #ccc;
+  margin-bottom: 2em;
+  padding: 2em;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Styles pour les informations sur le service */
+.service-info {
+  flex: 1;
+}
+
+.service-info h2 {
+  font-size: 1.2rem;
+  margin-bottom: 1em;
+}
+
+.service-info .description {
+  color: #333;
+}
+
+.service-info .price {
+  font-weight: bold;
+  color: #222122;
+}
+
+/* Styles pour les formulaires "Ajouter un nouveau service" et "Modifier les services" */
+.section-content h2 {
+  margin-top: 2em;
+  color: #333;
+}
+
+.section-content .form-group {
+  margin-top: 1em;
+}
+
+.section-content .styled-button {
+  background-color: #448AFF;
+  color: white;
+  padding: 1em 2em;
+  margin-top: 1.2em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.section-content .styled-button:hover {
+  background-color: #18FFFF;
+}
+
+/* Forme de modification de services */
+.edit-services-form ul {
+  list-style: none;
+  padding: 0;
+}
+
+.edit-services-form li {
+  margin-bottom: 1.5em;
+}
+
+.edit-services-form input[type="text"] {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.edit-services-form button[type="submit"] {
+  background-color: #448AFF;
+  color: white;
+  padding: 1em 2em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.edit-services-form button[type="submit"]:hover {
+  background-color: #18FFFF;
+}
+
+/* Styles pour les boutons du carrousel */
+.carrousel-button {
+  background-color: #448AFF;
+  color: white;
+  padding: 1em 2em;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-button:hover {
+  background-color: #18FFFF;
+}
+
+/* Styles pour le formulaire de témoignages */
+#testimonialForm {
+  margin: 2em auto;
+  max-width: 45em; /* Adjust the maximum width as needed */
+  padding: 2em;
+  background-color: #f4f4f4;
+  border-radius: 1.25em;
+  box-shadow: 0.25em 0.5em 1.5em rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 13em;
+}
+
+#testimonialForm h2 {
+  font-size: 2.8em;
+  margin-bottom: 2em;
+  color: #333;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 1.5em;
+}
+
+.form-group label {
+  display: block;
+  font-size: 1em;
+  margin-bottom: 1em;
+  color: #333;
+}
+
+.form-group input[type="text"],
+.form-group textarea {
+  width: 100%;
+  padding: 1em;
+  font-size: 1em;
+  border: 0.0625em solid #ccc;
+  border-radius: 0.3125em;
+  margin-bottom: 0.5em;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+.form-group .rating {
+  display: flex;
+  flex-direction: row-reverse; 
+  align-items: center;
+}
+
+.form-group .rating label {
+  margin-right: 0;
+}
+
+.form-group .rating-input {
+  display: none;
+}
+
+.form-group .rating-star:before {
+  content: '\2605';
+  font-size: 2em;
+  color: #ccc;
+}
+
+.form-group .rating-input:checked ~ .rating-star:before {
+  color: #f39c12;
+}
+
+#rating-value {
+  position: relative;
+  right: -3em;
+  top: 10%;
+  font-weight: 500;
+  font-size: 8em;
+  margin-right: 2.5em;
+}
+
+.form-group input[type="submit"] {
+  background-color: #3D94F6;
+  background-image: linear-gradient(top, #3D94F6, #1E62D0);
+  border-radius: 0.3125em;
+  color: #FFFFFF;
+  font-size: 1em;
+  padding: 1em;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.form-group input[type="submit"]:hover {
+  background: #1E62D0;
+}
+
+.forms-container {
+  display: flex;
+  justify-content: space-between; /* Add space between the forms */
+  margin: 2em auto; /* Apply margin to center the forms */
+  max-width: 1000px; /* Set a maximum width for the container */
+}
